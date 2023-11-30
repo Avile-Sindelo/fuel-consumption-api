@@ -5,6 +5,7 @@ import { engine } from 'express-handlebars';
 
 import FuelConsumption from './fuel-consumption.js';
 import FuelConsumptionAPI from './fuel-consumption-api.js';
+import Routes from './routes/routes.js';
 
 const pgp = pgPromise();
 
@@ -16,7 +17,8 @@ const connectionOptions = {
 const db = pgp(connectionOptions);
 
 const fuelConsumption = FuelConsumption(db);
-const fuelConsumptionAPI = FuelConsumptionAPI(fuelConsumption)
+const fuelConsumptionAPI = FuelConsumptionAPI(fuelConsumption);
+const routes = Routes(fuelConsumptionAPI);
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -33,8 +35,8 @@ app.get('/', async function(req, res){
     let vehicles = await fuelConsumption.vehicles();
     res.render('allVehicles', {cars: vehicles})
 })
-app.get('/api/vehicles', fuelConsumptionAPI.vehicles);
-app.get('/api/vehicle', fuelConsumptionAPI.vehicle);
+app.get('/api/vehicles', routes.home);
+app.get('/api/vehicle', routes.specificVehicle);
 app.post('/api/vehicle', fuelConsumptionAPI.addVehicle);
 app.post('/api/refuel', fuelConsumptionAPI.refuel);
 

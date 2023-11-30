@@ -19,7 +19,7 @@ label{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-   
+   font-family: monospace;
 }
 
 .car-detail{
@@ -42,4 +42,47 @@ label{
     justify-content: center;
     width: fit-content;
     padding: 2em;
+}
+
+#refuel-div{
+    margin: 1em 20em;
+    background-color: lightgrey;
+    padding: 3em 5em;
+    border-radius: 5px;
+    font-family: monospace;
+}
+
+h2{
+    text-align: center;
+}
+
+#refuel-div > h2{
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#add-vehicle-div{
+    margin: 3em 25em;
+    background-color: lightgray;
+    padding: 1em 4em;
+    border-radius: 5px;
+    font-family: monospace;
+}
+
+#add-vehicle-btn{
+    margin: 2em 0 0 43em;
+    padding: .5em 2em;
+    background-color: lightgreen;
+    border: .5px green solid;
+    border-radius: 5px;
+}
+
+#add-vehicle-div > h2{
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#add-vehicle-btn:hover{
+    background-color: green;
+    color: white;
+    font-weight: bolder;
+    transform: scale(1.01);
 }

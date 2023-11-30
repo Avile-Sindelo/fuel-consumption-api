@@ -1,6 +1,18 @@
 {{!-- recieves an array called Data  --}}
 <div class="vehicle-details">
 <h2>All vehicles</h2>
+    
+    <form action="/api/vehicle" method="get">
+        <select name="vehicleID">
+            <option selected disabled>Filter by ID</option>
+            {{#each cars}}
+            <option>{{id}}</option>
+            {{/each}}
+        </select>
+
+        <button type="submit">Submit</button>
+    </form>
+
     {{#each cars}}
     <div class="each-vehicle">
          <div class="row">
