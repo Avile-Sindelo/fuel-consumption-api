@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export default function Routes(fuelConsumptionAPI){
+export default function Routes(){
     //Home
         //Make the Axios call to the API
         //render the all vehicles view and pass the vehicle data in the object
@@ -23,7 +23,7 @@ export default function Routes(fuelConsumptionAPI){
     }
 
     //Specific vehicle
-        //Call the API method responsible and store the result in a variable
+        //Call the API method responsible and store the result in a variable - using Axios
         //Render the all vehicles view and pass the returned data in the object
     //Specific vehicle ends
     async function specificVehicle(req, res){

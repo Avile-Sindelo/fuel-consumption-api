@@ -18,7 +18,7 @@ const db = pgp(connectionOptions);
 
 const fuelConsumption = FuelConsumption(db);
 const fuelConsumptionAPI = FuelConsumptionAPI(fuelConsumption);
-const routes = Routes(fuelConsumptionAPI);
+const routes = Routes();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -34,11 +34,25 @@ app.use(express.json());
 app.get('/', async function(req, res){
     let vehicles = await fuelConsumption.vehicles();
     res.render('allVehicles', {cars: vehicles})
-})
-app.get('/api/vehicles', routes.home);
-app.get('/api/vehicle', routes.specificVehicle);
-app.post('/api/vehicle', fuelConsumptionAPI.addVehicle);
-app.post('/api/refuel', fuelConsumptionAPI.refuel);
+});
+
+app.get('/api/vehicles',  async function(req, res){
+    let vehicles = await fuelConsumption.vehicles();
+    res.render('allVehicles', {cars: vehicles})
+});
+
+app.get('/api/vehicle', async function(req, res){
+    let vehicle = fuelConsumptionAPI.vehicle;
+    res.render('allVehicles', {cars: vehicle});
+});
+app.post('/api/vehicle', async function(req, res){
+    fuelConsumptionAPI.addVehicle;
+    res.render('addVehicle');
+});
+app.post('/api/refuel', function(req, res){
+    fuelConsumptionAPI.refuel
+    res.render('refuelVehicle');
+});
 
 app.listen(PORT, () => console.log(`App started on port: ${PORT}`));
 
