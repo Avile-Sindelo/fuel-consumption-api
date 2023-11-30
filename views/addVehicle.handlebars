@@ -1,11 +1,15 @@
 {{!-- takes description and reg number --}}
 <form action="/api/vehicle" method="post">
     <h2> Add a vehicle </h2>
-    <label for="descr">Description</label>
-    <input name="description" placeholder="car description">
+    <div class="row">
+        <label for="descr">Description</label>
+        <input name="description" placeholder="car description">
+    </div>
     
-    <label for="reg number">Reg Number</label>
-    <input name="regNumber">
+    <div class="row">
+        <label for="reg number">Reg Number</label>
+        <input name="regNumber">
+    </div>
 
 <button type="submit" id="add-vehicle-btn">Submit</button>
 </form>
