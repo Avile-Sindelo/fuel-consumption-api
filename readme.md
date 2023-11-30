@@ -79,3 +79,6 @@ You have until `16h30` on `30 November 2023` to complete this.
 Please let us know urgently if you have any loadshedding related issues. Then we will discuss with you how we can accomodate you in this regard.
 
 Please commit your code locally to git by 16h30 even if you can't push to GitHub due to load shedding as we would like a benchmark of your progress at 16h30. Even if you have made alternative arrangements due to loadshedding with us.
+
+
+[![Node.js CI](https://github.com/Avile-Sindelo/fuel-consumption-api/actions/workflows/node.js.yml/badge.svg)](https://github.com/Avile-Sindelo/fuel-consumption-api/actions/workflows/node.js.yml)

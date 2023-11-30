@@ -1,0 +1,29 @@
+{{!-- recieves an array called Data  --}}
+<div class="vehicle-details">
+<h2>All vehicles</h2>
+<a href="./addVehicle.handlebars">Add a vehicle</a>
+    {{#each cars}}
+    <div class="each-vehicle">
+         <div class="row">
+        <label for="descr">Vehicle description</label>
+        <span class="car-detail" id="descr">{{description}} </span>
+        </div>
+        <div class="row">
+            <label for="descr">Total liters</label>
+            <span class="car-detail" id="descr">{{total_liters}}</span>L
+        </div>
+        <div class="row">
+            <label for="descr">Total amount</label>
+            R<span class="car-detail" id="descr">{{total_amount}}</span>
+        </div>
+        <div class="row">
+            <label for="descr">Total distance</label>
+            <span class="car-detail" id="descr">{{total_distance}}</span>KM
+        </div>
+        <div class="row">
+            <label for="descr">Fuel Consumption</label>
+            <span class="car-detail" id="descr">{{fuel_consumption}}</span>L/KM
+        </div>     
+    </div>
+    {{/each}}
+</div>

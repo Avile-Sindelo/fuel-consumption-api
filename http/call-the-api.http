@@ -2,7 +2,7 @@ GET http://localhost:3000/api/vehicles HTTP/1.1
 
 ###
 
-GET http://localhost:3000/api/vehicle?id=245 HTTP/1.1
+GET http://localhost:3000/api/vehicle?id=16 HTTP/1.1
 
 ###
 
@@ -10,8 +10,11 @@ POST http://localhost:3000/api/vehicle HTTP/1.1
 content-type: application/json
 
 {
-    "description": "sample vehicle",
-    "regNumber": "CAA 780-123"
+    "description": "White Toyota Quantum",
+    "regNumber": "CA 234-897",
+    "total_liters": "40",
+    "total_amount": "1200",
+    "total_distance": "443278"
 }
 
 ###
@@ -31,10 +34,10 @@ POST http://localhost:3000/api/refuel HTTP/1.1
 content-type: application/json
 
 {
-    "vehicleId" : 245, 
+    "vehicleId" : 16, 
     "liters" : 20, 
-    "amount" : 475, 
-    "distance" : 56423, 
+    "amount" : 500, 
+    "distance" : 56500, 
     "filledUp" : true
 }
 
